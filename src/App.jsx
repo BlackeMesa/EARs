@@ -6,11 +6,11 @@ import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, To
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
-
+console.log(activeSong);
   return (
     <div className="relative flex">
       <Sidebar />
-      <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
+      <div className="flex-1 flex flex-col bg-gradient-to-br " style={{ background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(11,160,190,1) 67%, rgba(9,9,121,1) 83%)" }}>
         <Searchbar />
 
         <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
@@ -30,7 +30,6 @@ const App = () => {
           </div>
         </div>
       </div>
-
       {activeSong?.title && (
         <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
           <MusicPlayer />

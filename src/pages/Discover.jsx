@@ -13,7 +13,7 @@ const { activeSong, isPlaying, genreListId } = useSelector((state) => state.play
 
 
 const { data, isFetching, error} = useGetSongByGenreQuery(genreListId || "POP");
-console.log(data);
+
 if(isFetching) return <Loader title=" Loading songs..." />;
 if(error) return <Error />
 const genreTitle = genres.find(({ value}) => value === genreListId)?.title;
